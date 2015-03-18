@@ -1,0 +1,645 @@
+// Core (Main Style)
+
+#globalheader {
+    border-bottom: 1px solid $border;
+    background-color: rgba(255,255,255,.5);
+}
+
+#container,
+#footer {
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media #{$mq-md} {
+        width: 700px;
+    }
+
+    @media #{$mq-sm} {
+        width: 93.75%;
+        word-wrap: break-word;
+        overflow: hidden;
+    }
+}
+
+#blog-title {
+    margin: 4em 0 1em;
+
+    @media #{$mq-sm} {
+        margin: 2em 0 1em 0;
+        text-align: center;
+    }
+}
+
+#content {
+    margin-top: 3em;
+
+    @media #{$mq-sm} {
+        margin-top: 2em;
+    }
+}
+
+#title{
+    display: inline-block;
+    font-size: 120%;
+    padding-bottom: .2em;
+    letter-spacing: .2em;
+    margin: 0 0 1em;
+    border-bottom: 5px solid $header;
+    &:hover {
+        border-color: $link;
+        a {
+            color: $link;
+        }
+    }
+
+    a {
+        position: relative;
+        left: .1em; // ちょっとずらしてる
+        padding: .4em 0;
+    }
+}
+
+#blog-description {
+    margin: 0;
+    font-size: 80%;
+    color: $light;
+    font-weight: normal;
+    letter-spacing: .1em;
+}
+
+// header-image
+
+.header-image-enable {
+    #blog-title-inner {
+        text-align: center;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    #title {
+        margin-top: 2em;
+        border-bottom: 0;
+        margin-bottom: .3em;
+    }
+}
+
+// main
+
+#main {
+    padding-left: 200px;
+
+    @media #{$mq-md} {
+        padding-left: 0;
+    }
+}
+
+// post
+
+.entry {
+    margin-bottom: 6em;
+    position: relative;
+    @media #{$mq-sm} {
+        margin-bottom: 3em;
+    }
+
+    .entry-header {
+        margin-bottom: 2em;
+    }
+
+    .entry-title {
+        font-size: 220%;
+        margin: 0 0 .2em;
+
+        @media #{$mq-md} {
+            font-size: 180%;
+        }
+
+        @media #{$mq-sm} {
+            font-size: 140%;
+        }
+
+    }
+
+    .date {
+        position: absolute;
+        top: .5em;
+        left: -200px;
+        width: 180px;
+
+        @media #{$mq-md} {
+            width: auto;
+            position: static;
+            margin-bottom: .5em;
+            font-size: 90%;
+        }
+    }
+
+    .entry-header-menu {
+        position: absolute;
+        top: 3em;
+        left: -200px;
+        a {
+            @extend .btn;
+            @extend .btn-light;
+        }
+    }
+}
+
+.date {
+    font-weight: bold;
+    font-size: 110%;
+
+    a {
+        color: $header;
+        &:hover {
+            color: $link;
+        }
+    }
+}
+
+.categories {
+    font-size: 85%;
+    a {
+        color: $light;
+        margin-right: 1em;
+    }
+}
+
+.page-entry .entry {
+    margin-bottom: 3em; // 記事パーマリンク
+
+    @media #{$mq-sm} {
+        margin-bottom: 2em;
+    }
+}
+
+// entry-content の中の書式
+
+.entry-content {
+    font-size: 105%;
+    line-height: 2;
+    margin-bottom: 2em;
+
+    p {
+        margin: 0 0 1em 0;
+    }
+
+    img,
+    video {
+        max-width: 100%;
+        height: auto;
+    }
+
+    // Flickr で max-width 指定したときのアスペクト比をなおす
+     a[title*="Flickr"] img {
+        height: auto !important;
+     }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 1em 0 0.8em 0;
+        line-height: 1.5;
+    }
+
+    h1 {
+        font-size: 170%;
+    }
+
+    h2 {
+        font-size: 160%;
+    }
+
+    h3 {
+        font-size: 140%;
+    }
+
+    h4 {
+        font-size: 130%;
+    }
+
+    h5 {
+        font-size: 110%;
+    }
+
+    h6 {
+        font-size: 100%;
+    }
+
+    ul,
+    ol,
+    dd {
+        margin: 0 0 1em 1.5em;
+        padding: 0;
+
+        li {
+            ul,ol {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-bottom: 1em;
+        margin-bottom: 1em;
+        width: 100%;
+        overflow: auto;
+        display: block;
+    }
+
+    table th,
+    table td {
+        border: 1px solid #ddd;
+        padding: 5px 10px;
+    }
+
+    table th {
+        background: #fafafa;
+    }
+
+    .hatena-asin-detail li {
+        line-height: 1.4;
+    }
+
+    blockquote {
+        margin: 1.5em 3em;
+        padding: 5px 20px;
+        border-left: 2px solid #aaa;
+        color: #777;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+    }
+
+    pre,
+    code {
+        font-family: 'Monaco', 'Consolas', 'Courier New', Courier, monospace, sans-serif;
+    }
+
+    pre {
+        padding: 15px;
+        background: $bg-light;
+        border: none;
+        border-radius: 3px;
+        word-wrap: normal;
+        overflow-x: auto;
+        font-size: 100%;
+        line-height: 1.3;
+
+        &>code {
+            margin: 0;
+            padding: 0;
+            white-space: pre;
+            border: none;
+            background-color: transparent;
+            font-family: 'Monaco', 'Consolas', 'Courier New', Courier, monospace, sans-serif;
+        }
+
+        @media #{$mq-md} {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow-x: hidden;
+        }
+
+    }
+
+    code {
+        font-size: 90%;
+        margin: 0 2px;
+        padding: 0px 5px;
+        border: 1px solid $border;
+        background-color: #f7f7f2;
+        border-radius: 3px;
+    }
+
+    // gistでtableおかしいのを打ち消す
+    .gist {
+        table {
+            margin: 0;
+            border: 0;
+            td {
+                border: 0;
+            }
+        }
+    }
+
+    hr {
+        width: 20%;
+        margin: 3em auto;
+        border: 0;
+        border-top: 3px solid $border;
+    }
+
+    @media #{$mq-md} {
+        font-size: 100%;
+    }
+
+    @media #{$mq-sm} {
+        font-size: 90%;
+        line-height: 1.8;
+
+        blockquote {
+            margin: 1em 0;
+        }
+
+        table {
+            th,
+            td {
+                word-break: break-all;
+            }
+        }
+
+        iframe {
+          width: 100% !important;
+        }
+    }
+
+}
+
+// entry-footer
+.entry-footer-section {
+    font-size: 85%;
+    color: $light;
+    line-height: 1.5;
+    a {
+        color: $light;
+        &:hover {
+            color: $link;
+        }
+    }
+
+    @media #{$mq-sm} {
+        font-size: 80%;
+    }
+}
+
+.social-buttons {
+    margin-bottom: 1em;
+}
+
+// comment
+
+.comment-box {
+
+    ul {
+        list-style: none;
+        margin: 0 0 1em 0;
+        padding: 0;
+        font-size: 90%;
+    }
+
+    li {
+        padding: 1em 0 1em 80px;
+        border-bottom: 1px solid $border;
+        position: relative;
+    }
+
+    .hatena-id-icon {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 64px !important;
+        height: 64px !important;
+        border-radius: 64px;
+    }
+
+    .comment-user-name {
+        margin: 0 0 .5em;
+        font-size: 100%;
+        font-weight: bold;
+        a {
+            color: $header;
+        }
+    }
+
+    .comment-metadata {
+        margin: 0;
+        font-size: 85%;
+        color: $light;
+    }
+
+}
+
+.leave-comment-title {
+    @extend .btn;
+    @extend .btn-light;
+}
+
+// pager
+
+.pager {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 95%;
+    font-weight: bold;
+    margin: 3em auto;
+
+    a {
+        display: inline-block;
+        min-width: 1.2em;
+        padding: .6em 1em;
+        margin: 1px;
+        border-radius: 3px;
+        color: $base;
+        &:hover {
+            background-color: $bg-light;
+        }
+    }
+
+    @media #{$mq-sm} {
+        display: table;
+        width: 100%;
+        margin: 2em auto;
+        table-layout: fixed;
+        font-size: 85%;
+
+        > span {
+            display: table-cell;
+            vertical-align: middle;
+            width: 50%;
+        }
+
+        a {
+            padding: .5em;
+        }
+    }
+}
+
+/* sidebar */
+
+#box2 {
+    font-size: 85%;
+}
+
+#box2-inner {
+    margin-left: -15px;
+    margin-right: -15px;
+    @extend .clearfix;
+    height: auto;
+    overflow: hidden;
+
+    @media #{$mq-sm} {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.hatena-module {
+    text-align: left;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 4em;
+    width: 33.33333%;
+    float: left;
+    box-sizing: border-box;
+    @extend .clearfix;
+
+    &:nth-child(3n+1) {
+        clear: both; //floatの高さ揃える
+    }
+
+    @media #{$mq-sm} {
+        float: none;
+        padding-right: 0;
+        padding-left: 0;
+        width: 100%;
+        padding-bottom: 3em;
+    }
+
+    .hatena-module-title {
+        margin-bottom: 1em;
+        font-weight: bold;
+        a {
+            color: $base;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.hatena-urllist {
+    margin: 0;
+    padding: 0;
+    li {
+        list-style: none;
+        border-bottom: 1px solid $border;
+        padding: .8em 0;
+    }
+}
+
+.hatena-module-profile {
+
+    .profile-icon {
+        float: left;
+        border-radius: 64px;
+        margin: 0 10px 10px 0;
+        border-radius: 5px;
+    }
+
+    .id {
+        display: block;
+        font-weight: bold;
+        font-size: 110%;
+        margin-bottom: 5px;
+    }
+
+    .profile-description {
+        font-size: 90%;
+        p{
+            margin-top: 0;
+        }
+    }
+
+}
+
+.hatena-module-search-box {
+    .search-form {
+        border-bottom: 1px solid $border;
+        width: 100%;
+        position: relative;
+    }
+
+    .search-module-input {
+        padding: .5em;
+        background: none;
+        border: none;
+        outline: none;
+        width: 80%;
+        font-size: 120%;
+        box-sizing: border-box;
+    }
+
+    .search-module-button {
+        background-color: $bg-light;
+        padding: .3em .5em;
+        border: none;
+        position: absolute;
+        right: 0;
+        bottom: .2em;
+    }
+
+}
+
+// footer
+
+#footer {
+    font-size: 80%;
+    margin: 3em auto;
+
+    .services {
+        margin: 0;
+    }
+}
+
+// About
+
+.page-about {
+
+    dt {
+        font-size: 130%;
+        font-weight: bold;
+        margin-bottom: .3em;
+    }
+
+    dd {
+        margin-left: 0;
+        margin-bottom: 2em;
+    }
+}
+
+// archive
+
+.page-archive {
+
+    .archive-entries {
+
+        .archive-entry {
+            margin-bottom: 3em;
+        }
+
+        .entry-title {
+            font-size: 150%;
+            margin: 0 0 .5em;
+        }
+        .categories {
+            margin: 0 0 .5em;
+        }
+        .entry-description {
+            font-size: 100%;
+            margin: 0 0 1em;
+        }
+
+    }
+
+}
