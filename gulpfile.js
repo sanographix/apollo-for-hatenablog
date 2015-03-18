@@ -15,8 +15,7 @@ gulp.task('sass', function () {
         .pipe(pleeease({
             autoprefixer: {
                 browsers: ['last 2 versions']
-            },
-            minifier: false
+            }
         }))
         .pipe(gulp.dest('build/css'))
         .pipe(reload({stream:true}));

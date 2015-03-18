@@ -1,15 +1,18 @@
 // Common
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 body {
-    font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    font-family: 'Gill Sans W01 Medium', 'Gill Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background: $bg;
     color: $base;
     -webkit-font-smoothing: antialiased;
+    @media #{$mq-sm} {
+        font-size: 90%;
+    }
 }
 
 a {
     color: $link;
+    transition: all .2s;
     text-decoration: none;
 
     &:hover {
@@ -17,10 +20,18 @@ a {
     }
 }
 
+p {
+    color: rgba(255,255,255,.7);
+    a {
+        color: #fff;
+    }
+}
+
 h1,h2,h3,h4,h5,h6 {
-    color: $header;
+    font-weight: normal;
+    font-family: 'Gill Sans W01 Light', 'Gill Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     a,a:hover {
-        color: $header;
+        color: $base;
         text-decoration: none;
     }
 }
