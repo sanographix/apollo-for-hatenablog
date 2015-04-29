@@ -69,10 +69,10 @@
     </div>
   </div>
   <script type="text/javascript">
-    if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+    if ( navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
       document.write('');
     }else {
-      document.write('<video id="video" poster="build/images/bg.jpg" autoplay="play" preload="auto" loop=""><source src="build/videos/bg.mp4" type="video/mp4"><source src="build/videos/bg.webm" type="video/webm"></video>');
+      document.write('<video id="video" poster="build/images/bg.jpg" autoplay="play" preload="auto" loop="loop"><source src="build/videos/bg.mp4" type="video/mp4"></video>');
     }
   </script>
   <div class="video-mask"></div>
