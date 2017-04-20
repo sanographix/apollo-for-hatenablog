@@ -1,7 +1,7 @@
 // Common
 
 body {
-    font-family: 'Gill Sans W01 Medium', 'Gill Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Lato', 'Gill Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background: $bg;
     color: $base;
     -webkit-font-smoothing: antialiased;
@@ -29,7 +29,8 @@ p {
 
 h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
-    font-family: 'Gill Sans W01 Light', 'Gill Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Lato', 'Gill Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
     a,a:hover {
         color: $base;
         text-decoration: none;
